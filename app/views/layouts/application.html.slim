@@ -1,10 +1,24 @@
 doctype html
 html
   head
-    title Monolithic E-commerce
+    title Monolithic EC
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   body
+    .navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          a.navbar-brand href="#" Monolithic EC
+        .collapse.navbar-collapse#bs-navbar-collapse-1
+          ul.nav.navbar-nav
+            li
+              a href="/catalog" Catalog
+            li
+              a href="/cart" Cart
+            li
+              a href="/payments" Payments
+            li
+              a href="/shipments" Shipments
     .container
       = yield
