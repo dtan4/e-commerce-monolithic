@@ -6,9 +6,11 @@ table.table
       th User
       th Item
       th Amount
+      th Price
   tbody
     - @payments.each do |payment|
       tr
         td = payment.user.name
         td = payment.item.name
         td = payment.amount
+        td = payment.price

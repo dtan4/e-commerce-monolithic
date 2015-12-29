@@ -13,4 +13,8 @@
 class Payment < ActiveRecord::Base
   belongs_to :item
   belongs_to :user
+
+  def price
+    item.price * amount
+  end
 end
