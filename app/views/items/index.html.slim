@@ -5,8 +5,10 @@ table.table
     tr
       th Name
       th Description
+      th Price
   tbody
   - @items.each do |item|
     tr
       td = item.name
       td = item.description
+      td = item.price
