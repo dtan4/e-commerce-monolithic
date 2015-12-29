@@ -8,8 +8,10 @@
 #  amount     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  user_id    :integer
 #
 
 class Payment < ActiveRecord::Base
   belongs_to :item
+  belongs_to :user
 end
