@@ -4,7 +4,6 @@
 #
 #  id         :integer          not null, primary key
 #  item_id    :integer
-#  price      :integer
 #  amount     :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

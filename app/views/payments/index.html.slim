@@ -5,12 +5,10 @@ table.table
     tr
       th User
       th Item
-      th Price
       th Amount
   tbody
     - @payments.each do |payment|
       tr
         td = payment.user.name
         td = payment.item.name
-        td = payment.price
         td = payment.amount
