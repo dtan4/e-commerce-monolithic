@@ -1,1 +1,14 @@
 h1 Shipments
+
+table.table
+  thead
+    tr
+      th Name
+      th Address
+      th Amount
+  tbody
+    - @shipments.each do |shipment|
+      tr
+        td = shipment.user.name
+        td = shipment.user.address
+        td = shipment.amount
