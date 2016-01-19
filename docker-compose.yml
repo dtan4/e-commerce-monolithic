@@ -1,10 +1,11 @@
 app:
   build: .
   environment:
-    - RAILS_ENV=production
     - DATABASE_HOST=db
     - DATABASE_PORT=5432
     - DATABASE_USER=postgres
+    - RAILS_ENV=production
+    - RAILS_SERVE_STATIC_FILES=1
   links:
     - db:db
   ports:

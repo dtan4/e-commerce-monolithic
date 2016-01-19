@@ -16,4 +16,4 @@ COPY . /app
 EXPOSE 3000
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["bin/rails", "s"]
+CMD ["bin/rails", "s", "-b", "0.0.0.0"]
