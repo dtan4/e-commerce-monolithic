@@ -1,8 +1,32 @@
 require "slim"
 require "sinatra/base"
+require "sinatra/activerecord"
+
+class Cart < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :item
+end
+
+class Item < ActiveRecord::Base
+end
+
+class Payment < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :item
+
+  def price
+    item.price * amount
+  end
+end
+
+class Shipment < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :item
+end
 
 class App < Sinatra::Base
   configure do
+    register Sinatra::ActiveRecordExtension
     Slim::Engine.options[:pretty] = true
   end
 
@@ -20,6 +44,8 @@ class App < Sinatra::Base
   end
 
   get "/catalog" do
+    @items = Item.all
+
     slim :catalog
   end
 
@@ -28,6 +54,8 @@ class App < Sinatra::Base
   end
 
   get "/payments" do
+    @payments = Payment.all
+
     slim :payments
   end
 
@@ -35,7 +63,9 @@ class App < Sinatra::Base
     "/shipments"
   end
 
-  get "shipments" do
+  get "/shipments" do
+    @shipments = Shipment.all
+
     slim :shipments
   end
 end
