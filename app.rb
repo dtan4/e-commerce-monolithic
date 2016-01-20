@@ -12,15 +12,15 @@ class App < Sinatra::Base
   end
 
   get "/" do
-    "/"
+    slim :index
   end
 
   get "/cart" do
-    "/cart"
+    slim :cart
   end
 
   get "/catalog" do
-    "/catalog"
+    slim :catalog
   end
 
   post "/payments" do
@@ -28,7 +28,7 @@ class App < Sinatra::Base
   end
 
   get "/payments" do
-    "/payments"
+    slim :payments
   end
 
   post "/shipments" do
@@ -36,6 +36,6 @@ class App < Sinatra::Base
   end
 
   get "shipments" do
-    "/shipments"
+    slim :shipments
   end
 end
