@@ -1,8 +1,6 @@
 #!/bin/bash
 
-bin/rake db:create
-bin/rake db:schema:load
+bundle exec rake db:create
+bundle exec rake db:migrate
 
-bin/rake assets:precompile
-
-SECRET_KEY_BASE=$(bin/rake secret) exec $@
+exec $@
