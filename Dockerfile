@@ -13,7 +13,7 @@ RUN bundle install -j4 --without development test
 
 COPY . /app
 
-EXPOSE 3000
+EXPOSE 9292
 
 ENTRYPOINT ["./entrypoint.sh"]
-CMD ["bin/rails", "s", "-b", "0.0.0.0"]
+CMD ["bundle", "exec", "rackup", "-p", "9292"]
